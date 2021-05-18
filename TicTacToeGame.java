@@ -2,6 +2,8 @@ package com.tictactoy;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class TicTacToeGame 
 {
@@ -21,21 +23,25 @@ public class TicTacToeGame
 		}
 		System.out.println("Computer Letter is: " + ComputerLetter + " User Letter is :" + UserLetter);
 		showBoard(board);
-		int userMove = getUserMove(board);
+		getUserMove(board,UserLetter);
 		showBoard(board);
 	}
-	public static int getUserMove(char[] board)
+	 
+	public static void getUserMove(char[] board,char alphabet)
 	{
 		Scanner scan = new Scanner(System.in);
 		Integer[] validCells = {1,2,3,4,5,6,7,8,9};
-		while (true)
+		
+		Boolean occupied = false;
+		while (occupied == false)
 		{
 			System.out.println("Next move ? (1-9)");
 			int index = scan.nextInt();
 			if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index))
 			{
 			System.out.println("Entered cell is valid cell and space is free");
-			return index;
+			board[index] = alphabet;
+			occupied = true;
 		}
 				System.out.println("Enter valid cell is between 1-9");
 			}
