@@ -8,16 +8,16 @@ public class TicTacToeGame
 		System.out.println("Welcome to Tic Tac Toe Game");
 		char[] board = createBoard();
 		char UserLetter = chooseLetter();
-		char Letter ;
+		char ComputerLetter ;
 		if(UserLetter == 'X')
 		{
-			Letter = '0';
+			ComputerLetter = '0';
 		}
 		else
 		{
-			Letter = 'X';
+			ComputerLetter = 'X';
 		}
-		System.out.println("Letter is: " + Letter + " User Letter is:" + UserLetter);
+		System.out.println("Computer Letter is: " + ComputerLetter + " User Letter is:" + UserLetter);
 	}
 	public static char chooseLetter()
 	{
