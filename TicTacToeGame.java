@@ -1,14 +1,12 @@
 package com.tictactoy;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.Random;
 
 
 public class TicTacToeGame 
 {
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
+
 		System.out.println("Welcome to Tic Tac Toe Game");
 		char[] board = createBoard();
 		char UserLetter = chooseLetter();
@@ -25,7 +23,22 @@ public class TicTacToeGame
 		showBoard(board);
 		getUserMove(board,UserLetter);
 		showBoard(board);
+		toss();
 	}
+	public static void toss()
+    {
+
+        int toss = (int)Math.floor(Math.random() * 10) % 2+1;
+        switch(toss) 
+		{
+			case 1:
+				System.out.println("Player 1 win the toss so player 1 play the first");
+			break;
+			case 2:
+				System.out.println("Computer win the toss so the computer play the first");
+		}
+
+    }
 	 
 	public static void getUserMove(char[] board,char alphabet)
 	{
@@ -79,3 +92,4 @@ public class TicTacToeGame
 		return board;
 	}
 }
+
